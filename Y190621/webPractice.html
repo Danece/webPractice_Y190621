@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/bar.css">
+<link rel="stylesheet" href="./css/pictureSlide.css">
+<style>
+
+</style>
+<body>
+<!-- menu -->
+<div id="mySidenav_menu" class="sidenav_menu">
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+<!-- main -->
+<div id="main">
+  <!-- top -->
+  <div class="icon-bar" id="myDIV">
+      <div class="container" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+      <a class="btn active" href="javascript: return false;" onClick="changeTopBarSelect()"><i class="fa fa-home"></i></a> 
+      <a class="btn" href="#"><i class="fa fa-search"></i></a> 
+      <a class="btn" href="#"><i class="fa fa-envelope"></i></a> 
+      <a class="btn" href="#"><i class="fa fa-globe"></i></a>
+      <a class="btn" href="#"><i class="fa fa-trash"></i></a> 
+      <a class="btn" href="#"><i class="fa fa-bomb"></i></a> 
+      <a class="btn" href="#"><i class="fa fa-book"></i></a>
+      <a class="btn" href="#"><i class="fa fa-key"></i></a>
+      <a class="btn" href="#"><i class="fa fa-qrcode"></i></a>
+  </div>
+  <!-- left-rainbow -->
+  <div id="mySidenav" class="sidenav">
+      <a href="#" id="sunday">Sunday</a>
+      <a href="#" id="monday">Monday</a>
+      <a href="#" id="tuesday">Tuesday</a>
+      <a href="#" id="wednesday">Wednesday</a>
+      <a href="#" id="thursday" style="color:white">Thursday</a>
+      <a href="#" id="friday" style="color:white">Friday</a>
+      <a href="#" id="saturday" style="color:white">Saturday</a>
+  </div>
+</div>
+<!-- picture slide -->
+<div>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="./image/img_nature_wide.jpg" style="width:100%">
+      <div class="text">Forest</div>
+    </div>	
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./image/img_snow_wide.jpg" style="width:100%">
+      <div class="text">Snow Mountain</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./image/img_mountains_wide.jpg" style="width:100%">
+      <div class="text">River</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+	
+  </div>
+  <br>
+  <br>
+  <br>
+  <div style="text-align:center">
+    <span class="dot active" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+</div>
+
+
+<footer>
+	<p class="footer_p">
+    	Author:　Danece　&nbsp<br>
+        Date:　2019/06/21&nbsp
+    <p>
+</footer>
+<script>
+/* top bar choose */
+// Add active class to the current button (highlight it)
+var flag=false;
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+	var current = document.getElementsByClassName("active");
+	if (current.length > 0) { 
+	  current[0].className = current[0].className.replace(" active", "");
+	}
+	this.className += " active";
+  });
+}
+/* menu switch */
+function myFunction(x) {
+  x.classList.toggle("change");
+  if(!flag) {
+  	openNav();
+    flag = true;
+  } else {
+  	closeNav();
+    flag = false;
+  }
+}
+
+function openNav() {
+  document.getElementById("mySidenav_menu").style.width = "150px";
+  document.getElementById("main").style.marginLeft = "150px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav_menu").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+/* picture slide */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html> 

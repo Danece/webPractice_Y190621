@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./font-awesome.min.css">
+<style>
+body {margin:0;}
+/* top bar */
+.icon-bar {
+  width: 100%;
+  overflow: auto;
+}
+
+.btn {
+  background-color: #555;
+}
+
+.icon-bar a {
+  float: left;
+  width: 10%;
+  text-align: center;
+  padding: 10px 0;
+ /* transition: all 0.3s ease;*/
+  color: white;
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.icon-bar a:hover {
+  background-color: #4CAF50;
+  opacity:0.5;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+/* top baar */
+/* menu */
+.container {
+  display: inline-block;
+  cursor: pointer;
+  float:left;
+  background-color: #555;
+  padding: 11.5px 11.5px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.sidenav_menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #555;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav_menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav_menu a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav_menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#main {
+  transition: margin-left .5s;
+  
+}
+/* menu */
+/* side nav */
+#mySidenav a {
+  position: absolute;
+  left: -105px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  border-radius: 0 10px 10px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#sunday {
+  top: 80px;
+  background-color: red;
+}
+
+#monday {
+  top: 140px;
+  background-color: orange;
+}
+
+#tuesday {
+  top: 200px;
+  background-color: yellow;
+}
+
+#wednesday {
+  top: 260px;
+  background-color: green;
+}
+
+#thursday {
+  top: 320px;
+  background-color: blue;
+}
+
+#friday {
+  top: 380px;
+  background-color: navy;
+}
+
+#saturday {
+  top: 440px;
+  background-color: purple;
+}
+/* side nav */
+/* picture slide */
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  top: 50px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight:bold;
+  font-family: '微軟正黑體', 'arial black', sans-serif;
+  text-shadow:
+              -1px -1px 0 #000,
+              1px -1px 0 #000,
+              -1px 1px 0 #000,
+              1px 1px 0 #000,
+              2px 2px 2px black;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* picture slide */
+footer{
+    width: 100%;
+    height:50px;   /* footer的高度一定要是固定值*/ 
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    background: #333;
+}
+.footer_p{
+    text-align: right;
+    vertical-align: middle;
+    color: white;
+}
+</style>
+</head><body contenteditable="false">
+<!-- menu -->
+<div id="mySidenav_menu" class="sidenav_menu">
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#">About</a>
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#">Services</a>
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#">Clients</a>
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#">Contact</a>
+</div>
+<!-- main -->
+<div id="main">
+  <!-- top -->
+  <div class="icon-bar" id="myDIV">
+      <div class="container" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-home"></i></a> 
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-search"></i></a> 
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-envelope"></i></a> 
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-globe"></i></a>
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-trash"></i></a> 
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-bomb"></i></a> 
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-book"></i></a>
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-key"></i></a>
+      <a class="btn" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#"><i class="fa fa-qrcode"></i></a>
+  </div>
+  <!-- left-rainbow -->
+  <div id="mySidenav" class="sidenav">
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="sunday">Sunday</a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="monday">Monday</a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="tuesday">Tuesday</a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="wednesday">Wednesday</a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="thursday">Thursday</a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="friday">Friday</a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_icon_bar_h#" id="saturday">Saturday</a>
+  </div>
+</div>
+<!-- picture slide -->
+<div>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade" style="display: block;">
+      <div class="numbertext">1 / 3</div>
+      <img src="./img_nature_wide.jpg" style="width:100%">
+      <div class="text">Forest</div>
+    </div>
+
+    <div class="mySlides fade" style="display: none;">
+      <div class="numbertext">2 / 3</div>
+      <img src="./img_snow_wide.jpg" style="width:100%">
+      <div class="text">Snow Mountain</div>
+    </div>
+
+    <div class="mySlides fade" style="display: none;">
+      <div class="numbertext">3 / 3</div>
+      <img src="./img_mountains_wide.jpg" style="width:100%">
+      <div class="text">River</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+	
+  </div>
+  <br>
+  <br>
+  <br>
+  <div style="text-align:center">
+    <span class="dot active" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+</div>
+
+
+<footer>
+	<p class="footer_p">
+    	Author:　Danece　&nbsp;<br>
+        Date:　2019/06/21&nbsp;
+    </p><p>
+</p></footer>
+<script>
+/* top bar choose */
+// Add active class to the current button (highlight it)
+var flag=false;
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) { 
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+  });
+}
+/* menu switch */
+function myFunction(x) {
+  x.classList.toggle("change");
+  if(!flag) {
+  	openNav();
+    flag = true;
+  } else {
+  	closeNav();
+    flag = false;
+  }
+}
+
+function openNav() {
+  document.getElementById("mySidenav_menu").style.width = "150px";
+  document.getElementById("main").style.marginLeft = "150px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav_menu").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+/* picture slide */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+ 
+</body></html>
